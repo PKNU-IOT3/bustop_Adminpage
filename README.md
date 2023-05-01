@@ -9,22 +9,22 @@
 - MahAPP
 - MySQL
 
-1. C# MahApp / MySQL 활용을 위한 누겟 패키지 설치
+### 1. C# MahApp / MySQL 활용을 위한 누겟 패키지 설치
   - MahApps.Metro
   - MahApps.Metro.IconPacks
   - MySql.Data
-2. MySQL DB 추가 및 수정
-  - 버스 정보를 담는 table
-    - 
-  - 관리자 아이디/패스워드를 담는 table
-    - 
-3. MahApps를 활용한 ui 디자인 및 기능 구현
-  1) 메인 화면 
-    - 
-  2) 로그인 화면 
-    - 
-  3) 버스 정보 추가 화면
-    - 
+### 2. MySQL DB 추가 및 수정
+  - #### 버스 정보를 담는 table
+    - <img src="https://raw.githubusercontent.com/PKNU-IOT3/bustop_adminpage/main/images/MySQL_Bus_Table.png"/>
+  - #### 관리자 아이디/패스워드를 담는 table
+    - <img src="https://raw.githubusercontent.com/PKNU-IOT3/bustop_adminpage/main/images/MySQL_Manager_Table.png"/>
+### 3. MahApps를 활용한 ui 디자인 및 기능 구현
+  - #### 메인 화면 
+    - <img src="https://raw.githubusercontent.com/PKNU-IOT3/bustop_adminpage/main/images/MainWindow.png"/>
+  - #### 로그인 화면 
+    - <img src="https://raw.githubusercontent.com/PKNU-IOT3/bustop_adminpage/main/images/LoginWindow.png"/>
+  - #### 버스 정보 추가 화면
+    - <img src="https://raw.githubusercontent.com/PKNU-IOT3/bustop_adminpage/main/images/insertBusInfo.png"/>
 
 ## 로직
 - 미리 지정해둔 관리자의 id/pw 를 이용해 관리자모드 활성화(MySQL Login)
@@ -33,4 +33,5 @@
 - 버스 정보 추가를 통해 DB에 데이터 삽입 가능
 - 로그아웃 버튼을 통해 관리자 모드 비활성화 
 
-### 실행화면
+## 실행화면
+- <img src="https://raw.githubusercontent.com/PKNU-IOT3/bustop_adminpage/main/images/AdminPage_Execute.gif" width=700 />
