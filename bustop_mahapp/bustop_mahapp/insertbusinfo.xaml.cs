@@ -57,7 +57,7 @@ namespace bustop_mahapp
                                                 @bus_gap)";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@bus_idx", Convert.ToInt32(strBus_idx));
-                    cmd.Parameters.AddWithValue("@bus_num", Convert.ToInt32(strBus_num));
+                    cmd.Parameters.AddWithValue("@bus_num", strBus_num);
                     cmd.Parameters.AddWithValue("@bus_cnt", Convert.ToInt32(strBus_cnt));
                     cmd.Parameters.AddWithValue("@bus_gap", Convert.ToInt32(strBus_gap));
                     cmd.ExecuteNonQuery(); // DB에 실질적으로 저장시킴

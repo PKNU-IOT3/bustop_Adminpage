@@ -72,7 +72,7 @@ namespace bustop_mahapp
                             list.Add(new businfor
                             {
                                 Bus_idx = Convert.ToInt32(dr["bus_idx"]),
-                                Bus_num = Convert.ToString(dr["bus_num"]),
+                                Bus_num = Convert.ToString(dr["bus_num"]) + "번",
                                 Bus_cnt = Convert.ToInt32(dr["bus_cnt"]) + "명",
                                 Bus_gap = Convert.ToInt32(dr["bus_gap"]) + "분"
                             });
@@ -129,6 +129,7 @@ namespace bustop_mahapp
                 await commons.ShowMessageAsync("로그아웃", "관리자모드 비활성화");
                 commons.isManager = false;
                 this.DataContext = null;
+                StsResult.Content = null;
             }
         }
     }
