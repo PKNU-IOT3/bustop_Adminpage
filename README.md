@@ -38,4 +38,4 @@
 
 ## 0501 수정
 - MainWindow 버스 번호 출력 형태 수정(100->100번)
-  - <img src="https://raw.githubusercontent.com/PKNU-IOT3/bustop_adminpage/main/images/0501_.png"/>
+  - <img src="https://raw.githubusercontent.com/PKNU-IOT3/bustop_adminpage/main/images/0501_ModifyMainWindow.png"/>
