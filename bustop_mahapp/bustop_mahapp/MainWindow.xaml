@@ -7,8 +7,7 @@
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:bustop_mahapp"
         mc:Ignorable="d"
-        Title="관리자모드" Height="450" Width="800" FontFamily="NanumGothic" FontSize="14"
-                 Loaded="MetroWindow_Loaded">
+        Title="관리자모드" Height="450" Width="800" FontFamily="NanumGothic" FontSize="14">
 
     <mah:MetroWindow.IconTemplate>
         <DataTemplate>

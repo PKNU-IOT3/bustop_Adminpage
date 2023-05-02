@@ -30,19 +30,7 @@ namespace bustop_mahapp
             InitializeComponent();
         }
 
-        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            //if(!commons.isManager)
-            //{
-            //    StsResult.Content = "로그인을 먼저 진행해주세요";
-            //}
-            //else
-            //{
-            //    StsResult.Content = "관리자 모드 활성화";
-            //}
-        }
-
-        private async void BtnBusInfor_Click(object sender, RoutedEventArgs e)
+        public async void BtnBusInfor_Click(object sender, RoutedEventArgs e)
         {
             if(!commons.isManager)
             {
