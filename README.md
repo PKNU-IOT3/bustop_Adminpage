@@ -36,6 +36,13 @@
 ## 실행화면
 - <img src="https://raw.githubusercontent.com/PKNU-IOT3/bustop_adminpage/main/images/AdminPage_Execute.gif" width=700 />
 
-## 0501 수정
+## 05.01 소스코드 수정
 - MainWindow 버스 번호 출력 형태 수정(100->100번)
   - <img src="https://raw.githubusercontent.com/PKNU-IOT3/bustop_adminpage/main/images/0501_ModifyMainWindow.png"/>
+
+## 05.02 소스코드 수정
+- insertbusinfo.xaml.cs 수정
+  - DB에 이미 존재하는 버스 번호인지 확인하여 중복인 경우 DB Insert 제한
+  - 저장과 동시에 DB 조회 내용을 다시 뿌려주기
+    - MainWindow.xaml.cs의 BtnBusInfor_Click을 public으로 변경 후 
+    - businseftinfo.xaml.cs 파일에서 import 후 MainWindow 객체 생성하여 수정
