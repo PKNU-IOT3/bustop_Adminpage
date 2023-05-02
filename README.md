@@ -45,4 +45,4 @@
   - DB에 이미 존재하는 버스 번호인지 확인하여 중복인 경우 DB Insert 제한
   - 저장과 동시에 DB 조회 내용을 다시 뿌려주기
     - MainWindow.xaml.cs 의 BtnBusInfor_Click 메서드를 public으로 선언
-    - insertbusinfo.xaml.cs 에서 import(using) 후 버스정보 추가와 동시에 MainWindow 객체를 생성,조회 메서드 호출하여 
+    - insertbusinfo.xaml.cs 에서 import(using) 후 버스정보 추가와 동시에 MainWindow 객체를 생성,조회 메서드 호출하여 뿌림
