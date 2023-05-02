@@ -44,5 +44,3 @@
 - insertbusinfo.xaml.cs 수정
   - DB에 이미 존재하는 버스 번호인지 확인하여 중복인 경우 DB Insert 제한
   - 저장과 동시에 DB 조회 내용을 다시 뿌려주기
-    - MainWindow.xaml.cs의 BtnBusInfor_Click을 public으로 변경 후 
-    - businseftinfo.xaml.cs 파일에서 import 후 MainWindow 객체 생성하여 수정
