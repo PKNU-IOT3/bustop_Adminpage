@@ -46,3 +46,10 @@
   - 저장과 동시에 DB 조회 내용을 다시 뿌려주기
     - MainWindow.xaml.cs 의 BtnBusInfor_Click 메서드를 public으로 선언
     - insertbusinfo.xaml.cs 에서 import(using) 후 버스정보 추가와 동시에 MainWindow 객체를 생성,조회 메서드 호출하여 뿌림
+
+## 05.03 소스코드 수정
+- 버스 정보 삭제 Button 추가
+  - MainWindow.xaml 수정
+  - Timer를 사용하여 DB의 정보 변경 시 실시간으로 화면에 변경된 정보가 출력될 수 있도록 변경
+    - <img src="https://raw.githubusercontent.com/PKNU-IOT3/bustop_adminpage/main/images/0510_TimerSourceCode.png"/>
+    - DataGrid의 SelectionChanged 이벤트 발생 시 Timer.Stop()로 셀 선택 시 Timer 정지 
