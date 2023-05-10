@@ -53,3 +53,5 @@
   - Timer를 사용하여 DB의 정보 변경 시 실시간으로 화면에 변경된 정보가 출력될 수 있도록 변경
     - <img src="https://raw.githubusercontent.com/PKNU-IOT3/bustop_adminpage/main/images/0510_TimerSourceCode.png"/>
     - DataGrid의 SelectionChanged 이벤트 발생 시 Timer.Stop()로 셀 선택 시 Timer 정지 
+  - <img src="https://raw.githubusercontent.com/PKNU-IOT3/bustop_adminpage/main/images/0510_ModifyMainWindow.png"/>
+  - <img src="https://raw.githubusercontent.com/PKNU-IOT3/bustop_adminpage/main/images/0510_Delete.png"/>
