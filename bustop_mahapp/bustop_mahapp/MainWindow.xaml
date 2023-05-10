@@ -7,7 +7,7 @@
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:bustop_mahapp"
         mc:Ignorable="d"
-        Title="관리자모드" Height="450" Width="800" FontFamily="NanumGothic" FontSize="14">
+        Title="관리자모드" Height="450" Width="800" FontFamily="NanumGothic" FontSize="14" Loaded="MetroWindow_Loaded">
 
     <mah:MetroWindow.IconTemplate>
         <DataTemplate>
@@ -38,13 +38,14 @@
             <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button x:Name="BtnBusInfor" Content="버스 현황 조회" Margin="5" Width="150" Style="{StaticResource MahApps.Styles.Button.Dialogs.Accent}" Click="BtnBusInfor_Click"/>
                 <Button x:Name="BtnInsertBusInfor" Content="버스 정보 추가" Margin="5" Width="150" Style="{StaticResource MahApps.Styles.Button.Dialogs.Accent}" Click="BtnInsertBusInfor_Click"/>
+                <Button x:Name="BtnDelInfor" Content="버스 정보 삭제" Width="150" Margin="5" Style="{StaticResource MahApps.Styles.Button.Dialogs.Accent}" Click="BtnDelInfor_Click"/>
                 <Button x:Name="BtnLogin" Content="로그인" Margin="5" Width="100" Style="{StaticResource MahApps.Styles.Button.Dialogs.Accent}" Click="BtnLogin_Click"/>
                 <Button x:Name="BtnLogout" Content="로그아웃" Margin="5" Width="100" Style="{StaticResource MahApps.Styles.Button.Dialogs.Accent}" Click="BtnLogout_Click"/>
             </StackPanel>
         </Grid>
 
         <DataGrid Grid.Row="1" Grid.ColumnSpan="2" x:Name="GrdResult" Style="{StaticResource MahApps.Styles.DataGrid.Azure}" Margin="10,10,10,10"
-                  IsReadOnly="True" ItemsSource="{Binding}" AutoGenerateColumns="False">
+                  IsReadOnly="True" ItemsSource="{Binding}" AutoGenerateColumns="False" SelectionChanged="GrdResult_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Bus_idx}" Header="버스 등록 번호" FontWeight="Bold" Width="150">
                     <DataGridTextColumn.ElementStyle>
