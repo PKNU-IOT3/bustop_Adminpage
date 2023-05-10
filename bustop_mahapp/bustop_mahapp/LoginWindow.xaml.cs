@@ -35,7 +35,7 @@ namespace bustop_mahapp
         {
             string strTxtID = "";
             string strTxtPW = "";
-            if(string.IsNullOrEmpty(TxtID.Text)||string.IsNullOrEmpty(TxtPW.Text))
+            if(string.IsNullOrEmpty(TxtID.Text)||string.IsNullOrEmpty(TxtPW.Password))
             {
                 await this.ShowMessageAsync("오류", "아이디/패스워드를 입력해주세요!",MessageDialogStyle.Affirmative,null);
                 return;
@@ -51,7 +51,7 @@ namespace bustop_mahapp
                                        WHERE manager_id = @manager_id AND manager_pwd = @manager_pwd";
                     MySqlCommand selCmd = new MySqlCommand(selQuery, conn);
                     MySqlParameter prmManager_id = new MySqlParameter("@manager_id", TxtID.Text);
-                    MySqlParameter prmManager_pwd = new MySqlParameter("@manager_pwd", TxtPW.Text);
+                    MySqlParameter prmManager_pwd = new MySqlParameter("@manager_pwd", TxtPW.Password);
 
                     selCmd.Parameters.Add(prmManager_id);
                     selCmd.Parameters.Add(prmManager_pwd);
@@ -70,7 +70,7 @@ namespace bustop_mahapp
                         TxtID.Focus();
                         await this.ShowMessageAsync("로그인 실패", "관리자 모드 비활성화", MessageDialogStyle.Affirmative, null);
                         TxtID.Text = "";
-                        TxtPW.Text = "";
+                        TxtPW.Password = "";
                         
                     }
                 }

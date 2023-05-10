@@ -37,8 +37,7 @@
                      mah:TextBoxHelper.UseFloatingWatermark="True"
                      mah:TextBoxHelper.ClearTextButton="True" KeyDown="TxtID_KeyDown"/>
 
-        <TextBox x:Name="TxtPW" Grid.Row="1" Grid.Column="1" Margin="5,5" FontSize="11" Height="45" 
-                     Text="{Binding Manager_id}"
+        <PasswordBox x:Name="TxtPW" Grid.Row="1" Grid.Column="1" Margin="5,5" FontSize="11" Height="45"
                      mah:TextBoxHelper.Watermark=" 비밀번호를 입력하세요"
                      mah:TextBoxHelper.UseFloatingWatermark="True"
                      mah:TextBoxHelper.ClearTextButton="True" KeyDown="TxtPW_KeyDown"/>
