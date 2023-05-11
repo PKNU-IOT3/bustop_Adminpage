@@ -55,3 +55,11 @@
     - DataGrid의 SelectionChanged 이벤트 발생 시 Timer.Stop()로 셀 선택 시 Timer 정지 
   - <img src="https://raw.githubusercontent.com/PKNU-IOT3/bustop_adminpage/main/images/0510_ModifyMainWindow.png"/>
   - <img src="https://raw.githubusercontent.com/PKNU-IOT3/bustop_adminpage/main/images/0510_Delete.png"/>
+
+## 05.11 소스코드 수정
+- #### 1) MySQL Column 변경
+![](https://raw.githubusercontent.com/PKNU-IOT3/bustop_adminpage/main/images/0511_mysql.png)
+- #### 2) 1)의 변경에 따른 버스 정보 조회시 출력화면 및 소스코드 변경
+![](https://raw.githubusercontent.com/PKNU-IOT3/bustop_adminpage/main/images/0511_MainWindow.png)
+- #### 3) 1)의 변경에 따른 버스 정보 추가 화면 및 소스코드 변경
+![](https://raw.githubusercontent.com/PKNU-IOT3/bustop_adminpage/main/images/0511_insertBusInfo.png)
