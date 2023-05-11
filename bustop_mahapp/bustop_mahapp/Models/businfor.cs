@@ -12,5 +12,6 @@ namespace bustop_mahapp.Models
         public string Bus_num { get; set; }
         public string Bus_cnt { get; set; }
         public string Bus_gap { get; set; }
+        public string Bus_NowIn { get; set; }
     }
 }

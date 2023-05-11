@@ -76,7 +76,8 @@ namespace bustop_mahapp
                     var query = @"SELECT bus_idx,
                                         bus_num,
                                         bus_cnt,
-                                        bus_gap
+                                        bus_gap,
+                                        bus_NowIn
                                     FROM bus_table
                                     ORDER BY bus_idx ASC";
                     var cmd = new MySqlCommand(query, conn);
@@ -90,7 +91,8 @@ namespace bustop_mahapp
                             Bus_idx = Convert.ToInt32(dr["bus_idx"]),
                             Bus_num = Convert.ToString(dr["bus_num"]) + "번",
                             Bus_cnt = Convert.ToInt32(dr["bus_cnt"]) + "명",
-                            Bus_gap = Convert.ToInt32(dr["bus_gap"]) + "분"
+                            Bus_gap = Convert.ToInt32(dr["bus_gap"]) + "분",
+                            Bus_NowIn = Convert.ToInt32(dr["bus_NowIn"]) + "명"
                         });
                     }
                     this.DataContext = list;

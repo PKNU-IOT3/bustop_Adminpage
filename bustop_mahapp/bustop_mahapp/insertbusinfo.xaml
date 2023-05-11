@@ -20,6 +20,7 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -30,7 +31,8 @@
         <Label Grid.Row="1" Grid.Column="0" Content="버스 번호" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Label Grid.Row="2" Grid.Column="0" Content="탑승 대기 인원" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Label Grid.Row="3" Grid.Column="0" Content="배차 간격" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Button x:Name="insert" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"  Content="저장" Width="100"
+        <Label Grid.Row="4" Grid.Column="0" Content="현재 탑승 인원" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button x:Name="insert" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"  Content="저장" Width="100"
                     Style="{StaticResource MahApps.Styles.Button.Dialogs.Accent}" Click="insert_Click"/>
 
         <TextBox x:Name="TxtBus_idx" Grid.Row="0" Grid.Column="1" Margin="10,5" FontSize="12" Height="45"
@@ -53,5 +55,10 @@
                      mah:TextBoxHelper.Watermark="배차 간격 입력"
                      mah:TextBoxHelper.UseFloatingWatermark="True"
                      mah:TextBoxHelper.ClearTextButton="True" KeyDown="TxtBus_gap_KeyDown"/>
+        <TextBox x:Name="TxtBus_NowIn" Grid.Row="4" Grid.Column="1" Margin="10,5" FontSize="12" Height="45"
+                     Text="{Binding Bus_NowIn}"
+                     mah:TextBoxHelper.Watermark="현재 탑승 인원 입력"
+                     mah:TextBoxHelper.UseFloatingWatermark="True"
+                     mah:TextBoxHelper.ClearTextButton="True" KeyDown="TxtBus_NowIn_KeyDown"/>
     </Grid>
 </mah:MetroWindow>

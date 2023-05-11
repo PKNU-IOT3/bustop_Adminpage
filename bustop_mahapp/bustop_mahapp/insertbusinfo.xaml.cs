@@ -40,7 +40,8 @@ namespace bustop_mahapp
                 var query = @"SELECT bus_idx,
                                         bus_num,
                                         bus_cnt,
-                                        bus_gap
+                                        bus_gap,
+                                        bus_NowIn
                                     FROM bus_table
                                     ORDER BY bus_idx ASC";
                 var cmd = new MySqlCommand(query, conn);
@@ -54,7 +55,9 @@ namespace bustop_mahapp
                         Bus_idx = Convert.ToInt32(dr["bus_idx"]),
                         Bus_num = Convert.ToString(dr["bus_num"]),
                         Bus_cnt = Convert.ToInt32(dr["bus_cnt"]) + "명",
-                        Bus_gap = Convert.ToInt32(dr["bus_gap"]) + "분"
+                        Bus_gap = Convert.ToInt32(dr["bus_gap"]) + "분",
+                        Bus_NowIn = Convert.ToInt32(dr["bus_NowIn"]) + "명"
+
                     });
                 }
                 foreach (businfor item in list)
@@ -75,7 +78,8 @@ namespace bustop_mahapp
             string strBus_num = TxtBus_num.Text;
             string strBus_cnt = TxtBus_cnt.Text;
             string strBus_gap = TxtBus_gap.Text;
-            if (string.IsNullOrEmpty(TxtBus_idx.Text)|| string.IsNullOrEmpty(TxtBus_num.Text)|| string.IsNullOrEmpty(TxtBus_cnt.Text)|| string.IsNullOrEmpty(TxtBus_gap.Text))
+            string strBus_NowIn=TxtBus_NowIn.Text;
+            if (string.IsNullOrEmpty(TxtBus_idx.Text)|| string.IsNullOrEmpty(TxtBus_num.Text)|| string.IsNullOrEmpty(TxtBus_cnt.Text)|| string.IsNullOrEmpty(TxtBus_gap.Text)||string.IsNullOrEmpty(TxtBus_NowIn.Text))
             {
                 await this.ShowMessageAsync("오류", "버스 정보를 모두 입력해주세요!", MessageDialogStyle.Affirmative, null);
                 return;
@@ -88,6 +92,7 @@ namespace bustop_mahapp
                 TxtBus_num.Text = "";
                 TxtBus_cnt.Text = "";
                 TxtBus_gap.Text = "";
+                TxtBus_NowIn.Text = "";
             }
             else
             {
@@ -100,17 +105,20 @@ namespace bustop_mahapp
                                                 (bus_idx,
                                                 bus_num,
                                                 bus_cnt,
-                                                bus_gap)
+                                                bus_gap,
+                                                bus_NowIn)
                                                 VALUES
                                                 (@bus_idx,
                                                 @bus_num,
                                                 @bus_cnt,
-                                                @bus_gap)";
+                                                @bus_gap,
+                                                @bus_NowIn)";
                         MySqlCommand cmd = new MySqlCommand(query, conn);
                         cmd.Parameters.AddWithValue("@bus_idx", Convert.ToInt32(strBus_idx));
                         cmd.Parameters.AddWithValue("@bus_num", strBus_num);
                         cmd.Parameters.AddWithValue("@bus_cnt", Convert.ToInt32(strBus_cnt));
                         cmd.Parameters.AddWithValue("@bus_gap", Convert.ToInt32(strBus_gap));
+                        cmd.Parameters.AddWithValue("@bus_NowIn", Convert.ToInt32(strBus_NowIn));
                         cmd.ExecuteNonQuery(); // DB에 실질적으로 저장시킴
                         await this.ShowMessageAsync("성공", "버스 정보 DB 저장 성공!", MessageDialogStyle.Affirmative, null);
                         MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
@@ -161,6 +169,14 @@ namespace bustop_mahapp
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
             TxtBus_idx.Focus();
+        }
+
+        private void TxtBus_NowIn_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                insert_Click(sender, e);
+            }
         }
     }
 }
