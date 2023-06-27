@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace bustop_mahapp.Models
 {
-    class businfor
+    class businfor //MySQL DB의 bus_table
     {
         public int Bus_idx { get; set; }
         public string Bus_num { get; set; }

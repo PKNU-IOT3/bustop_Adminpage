@@ -26,7 +26,7 @@ namespace bustop_mahapp
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
-        private System.Timers.Timer bTimer;
+        private System.Timers.Timer bTimer; //DB 내용 변경 시 실시간 반영을 위함
 
         public MainWindow()
         {
@@ -43,10 +43,10 @@ namespace bustop_mahapp
 
         private void ProcUpdate(object sender, ElapsedEventArgs e)
         {
-            if (commons.isManager) {
+            if (commons.isManager) {//관리자로 로그인 되어있는 경우
                 this.Invoke(() =>
                 {
-                    LoadDB();
+                    LoadDB();//DB를 Load하여 화면에 출력하는 함수 호출
                 });
             }            
         }
@@ -57,9 +57,9 @@ namespace bustop_mahapp
             {
                 await commons.ShowMessageAsync("권한 없음", $"먼저 관리자모드로 로그인 해주세요!");
             }
-            else
+            else //관리자로 로그인 되어있는 경우
             {
-                bTimer.Elapsed += ProcUpdate;
+                bTimer.Elapsed += ProcUpdate; //btimer는 ProcUpdate함수를 호출
                 bTimer.Start();
             }
         }
@@ -189,7 +189,11 @@ namespace bustop_mahapp
 
         private void GrdResult_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            bTimer.Stop();
+            bTimer.Stop(); 
+            //그리드 뷰에서 item 선택 시 timer가 멈춰야 새롭게 정보가 로드되는것이 중지되고
+            //선택된 행에 대한 처리를 한 이후 다시 timer가 Start 되도록 구현
+            //ex) BtnDelInfor_Click 함수의 bTimer.Start()
+         
         }
     }
 }

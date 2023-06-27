@@ -65,7 +65,7 @@ namespace bustop_mahapp
                     string strbus_num = item.Bus_num;
                     if (strbus_num == TxtBus_num.Text)
                     {
-                        return true;
+                        return true; // DB에 등록되어 있는 버스 번호와 동일한 번호의 버스를 Insert 하려고 하면 true를 반환, Isexit() -> true를 return
                     }
                 }
             }
@@ -84,7 +84,7 @@ namespace bustop_mahapp
                 await this.ShowMessageAsync("오류", "버스 정보를 모두 입력해주세요!", MessageDialogStyle.Affirmative, null);
                 return;
             }
-            if(Isexit())
+            if(Isexit()) //DB에 등록되어있는 버스번호와 동일한 버스를 삽입하려고 하는 경우
             {
                 TxtBus_idx.Focus();
                 await this.ShowMessageAsync("데이터 중복", "이미 존재하는 버스 번호입니다!", MessageDialogStyle.Affirmative, null);

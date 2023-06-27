@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace bustop_mahapp.Models
 {
-    class managerinfor
+    class managerinfor //MYSQL DB의 manager_table
     {
         public string Manager_id { get; set; }
         public string Manager_pwd { get; set; }
